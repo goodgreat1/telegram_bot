@@ -5,11 +5,6 @@ from email.utils import parsedate_to_datetime
 from datetime import datetime
 
 # ── 설정 ──────────────────────────────────────────
-NAVER_CLIENT_ID     = "kVjTxVkIVKt6qrKUkAVA"
-NAVER_CLIENT_SECRET = "CPx1fV0py6"
-TELEGRAM_BOT_TOKEN  = "8036296906:AAHzJWDA3C934Q9fF3QpHn3C2S41rIDz91U"
-TELEGRAM_CHAT_ID    = 1293148042  # 정수형 chat_id로 설정
-QUERY               = "특징주"
 SEEN_FILE           = "seen.json"
 POLL_INTERVAL_SEC   = 10
 # ─────────────────────────────────────────────────

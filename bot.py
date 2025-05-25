@@ -3,10 +3,16 @@ from html import unescape, escape
 from bs4 import BeautifulSoup
 from email.utils import parsedate_to_datetime
 from datetime import datetime
+from keep_alive import keep_alive
 
 # ── 설정 ──────────────────────────────────────────
-SEEN_FILE           = "seen.json"
-POLL_INTERVAL_SEC   = 10
+NAVER_CLIENT_ID = os.environ["NAVER_CLIENT_ID"]
+NAVER_CLIENT_SECRET = os.environ["NAVER_CLIENT_SECRET"]
+TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
+TELEGRAM_CHAT_ID = int(os.environ["TELEGRAM_CHAT_ID"])
+QUERY = os.environ["QUERY"]
+SEEN_FILE = "seen.json"
+POLL_INTERVAL_SEC = 10
 # ─────────────────────────────────────────────────
 
 def load_seen_links():
@@ -144,6 +150,7 @@ def main():
     save_seen_links(seen)
 
 if __name__ == "__main__":
+    keep_alive()  # Flask 서버 실행 (UptimeRobot용)
     while True:
         try:
             main()

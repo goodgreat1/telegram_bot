@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from email.utils import parsedate_to_datetime
 from datetime import datetime
 from keep_alive import keep_alive
+import os
 
 # ── 설정 ──────────────────────────────────────────
 NAVER_CLIENT_ID = os.environ["NAVER_CLIENT_ID"]
